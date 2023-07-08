@@ -41,7 +41,7 @@ public class ToolDropTarget : DropTarget
 
         List<IngredientScriptableObject> ingredients = this.ingredientsManager.GetByIds(outputIngredientIds);
 
-        // TODO: Delete this function later
+        // TODO: Delete this ForEach later, it's just for testing
         ingredients.ForEach(ingredient => Debug.Log(ingredient));
 
         Destroy(ingredientDraggable.gameObject);
