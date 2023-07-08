@@ -2,41 +2,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using Beanc16.Common.Mechanics.DragAndDrop;
 
+[RequireComponent(typeof (IngredientPanel))]
 public class IngredientDraggable : Draggable
 {
-    [Header("Ingredient Info")]
-
-    [SerializeField]
-    private IngredientScriptableObject ingredientData;
-    private Image ingredientImage;
+    private IngredientPanel ingredientPanel;
 
     public IngredientScriptableObject Data
     {
-        get { return ingredientData; }
-        private set {
-            this.ingredientData = value;
-            this.RefreshSprite();
-        }
+        get { return this.ingredientPanel.Data; }
     }
 
     public void SetData(IngredientScriptableObject data)
     {
-        this.Data = data;
+        this.ingredientPanel.SetData(data);
     }
 
 
 
     private void OnEnable()
     {
-        this.ingredientImage = this.GetComponentInChildren<Image>();
+        this.ingredientPanel = this.GetComponent<IngredientPanel>();
         this.RefreshSprite();
     }
 
     private void RefreshSprite()
     {
-        if (this.ingredientData != null)
-        {
-            this.ingredientImage.sprite = this.ingredientData.sprite;
-        }
+        this.ingredientPanel.RefreshSprite();
     }
 }

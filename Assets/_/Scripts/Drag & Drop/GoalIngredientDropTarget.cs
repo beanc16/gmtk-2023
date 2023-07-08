@@ -11,16 +11,26 @@ public class GoalIngredientDropTarget : DropTarget
     [SerializeField]
     private List<IngredientScriptableObject> orderedIngredients = new List<IngredientScriptableObject>();
     private List<IngredientScriptableObject> completedIngredients = new List<IngredientScriptableObject>();
+    private List<GoalIngredientPanel> goalIngredientPanels = new List<GoalIngredientPanel>();
 
     public bool HasWon
     {
         get { return this.completedIngredients.Count == this.orderedIngredients.Count; }
     }
 
+
+
+    private void Awake()
+    {
+        this.goalIngredientPanels = FindObjectsOfType<GoalIngredientPanel>().ToList();
+    }
+
     private void Start()
     {
         AcceptDropIfNoErrorIsThrown.AddListener(ValidateDraggableOnDrop);
         OnSuccessfulDrop.AddListener(DeleteDroppedDraggable);
+        OnSuccessfulDrop.AddListener(AddCompletedIngredient);
+        OnSuccessfulDrop.AddListener(ToggleCompletionMarkOnGoalIngredient);
     }
 
     private void ValidateDraggableOnDrop(Draggable draggable)
@@ -42,11 +52,22 @@ public class GoalIngredientDropTarget : DropTarget
             {
                 throw new Exception("IngredientDraggable is not an ordered ingredient");
             }
-
-            else
-            {
-                completedIngredients.Add(ingredientDraggable.Data);
-            }
         }
+    }
+
+    private void AddCompletedIngredient(Draggable draggable)
+    {
+        IngredientDraggable ingredientDraggable = (IngredientDraggable)draggable;
+        this.completedIngredients.Add(ingredientDraggable.Data);
+    }
+
+    private void ToggleCompletionMarkOnGoalIngredient(Draggable draggable)
+    {
+        IngredientDraggable ingredientDraggable = (IngredientDraggable)draggable;
+
+        GoalIngredientPanel goalIngredientPanel = goalIngredientPanels.Find(goalIngredientPanel =>
+            goalIngredientPanel.Data.id == ingredientDraggable.Data.id
+        );
+        goalIngredientPanel.ToggleCompletionMark(true);
     }
 }

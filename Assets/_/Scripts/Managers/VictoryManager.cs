@@ -8,6 +8,7 @@ public class VictoryManager : MonoBehaviour
     [SerializeField]
     private GameObject victoryModal;
     private GoalIngredientDropTarget goalIngredientDropTarget;
+    private bool victoryTriggered = false;
 
     private void Awake()
     {
@@ -16,12 +17,17 @@ public class VictoryManager : MonoBehaviour
 
     private void Start()
     {
-        this.goalIngredientDropTarget.OnSuccessfulDrop.AddListener(TryTriggerVictory);
+        // this.goalIngredientDropTarget.OnSuccessfulDrop.AddListener(TryTriggerVictory);
     }
 
-    private void TryTriggerVictory(Draggable draggable)
+    private void Update()
     {
-        if (this.goalIngredientDropTarget.HasWon)
+        this.TryTriggerVictory();
+    }
+
+    private void TryTriggerVictory()
+    {
+        if (!this.victoryTriggered && this.goalIngredientDropTarget.HasWon)
         {
             this.TriggerVictory();
         }
@@ -34,5 +40,7 @@ public class VictoryManager : MonoBehaviour
         // Make it so that any leftover draggables can't be dragged
         List<Draggable> draggables = FindObjectsOfType<Draggable>().ToList();
         draggables.ForEach(draggable => draggable.ToggleInteractivity(false));
+
+        this.victoryTriggered = true;
     }
 }
