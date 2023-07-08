@@ -103,5 +103,12 @@ namespace Beanc16.Common.Mechanics.DragAndDrop
                 OnFailedDrop.Invoke(droppedObject);
             }
         }
+
+
+
+        protected void DeleteDroppedDraggable(Draggable draggable)
+        {
+            Destroy(draggable.gameObject);
+        }
     }
 }
