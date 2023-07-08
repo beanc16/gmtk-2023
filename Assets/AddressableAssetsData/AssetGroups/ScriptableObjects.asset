@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: ScriptableObjects
+  m_EditorClassIdentifier: 
+  m_GroupName: ScriptableObjects
+  m_Data:
+    m_SerializedData: []
+  m_GUID: c51ea76b31632b9ec8f789b180470cd8
+  m_SerializeEntries:
+  - m_GUID: 09b626f7538b8ff7cabcd2f5b41d19c5
+    m_Address: Pizza_Microwave_Recipe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RecipeScriptableObject
+  - m_GUID: 636805d7d26d94acf9aec88951f58cbb
+    m_Address: Pizza_Sifter_Recipe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RecipeScriptableObject
+  - m_GUID: a4c65163b3fc86287820002034ddfd3f
+    m_Address: Mistake
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: 8d3370b539570920f8aa222983ce2223
+    m_Address: Sauce
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: 9605b9d7a6815ed2c9d9b2cbf2c45dcb
+    m_Address: Pepperoni
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: bdb2eb85189bec22d9e3e9e7bf885d03
+    m_Address: Dough
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: e226a8bae987380cab2bc0f755ae09df
+    m_Address: Cheese
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: 62227be812f152334bc6fc6df4476f96
+    m_Address: Pizza
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ddbcc8c75853a2c00a3d34cafde86434, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 328f4e4097f5b4acb9ecc762c5dbd278, type: 2}
+    - {fileID: 11400000, guid: 166e57e9abde1a8aa815a7c23986e052, type: 2}
