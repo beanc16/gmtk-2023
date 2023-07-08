@@ -9,12 +9,12 @@ public class ToolDropTarget : DropTarget
 
     [SerializeField]
     private ToolScriptableObject toolData;
-    private RecipeAddressablesManager recipesManager;
+    private RecipeManager recipeManager;
     private IngredientsAddressablesManager ingredientsManager;
 
     private void Awake()
     {
-        this.recipesManager = FindObjectOfType<RecipeAddressablesManager>();
+        this.recipeManager = FindObjectOfType<RecipeManager>();
         this.ingredientsManager = FindObjectOfType<IngredientsAddressablesManager>();
     }
 
@@ -22,6 +22,7 @@ public class ToolDropTarget : DropTarget
     {
         AcceptDropIfNoErrorIsThrown.AddListener(ValidateDraggableOnDrop);
         OnSuccessfulDrop.AddListener(OutputRecipe);
+        OnSuccessfulDrop.AddListener(DeleteDroppedDraggable);
     }
 
     private void ValidateDraggableOnDrop(Draggable draggable)
@@ -37,13 +38,6 @@ public class ToolDropTarget : DropTarget
     private void OutputRecipe(Draggable draggable)
     {
         IngredientDraggable ingredientDraggable = (IngredientDraggable)draggable;
-        List<IngredientId> outputIngredientIds = recipesManager.GetRecipeOutput(ingredientDraggable.Data.id, this.toolData.id);
-
-        List<IngredientScriptableObject> ingredients = this.ingredientsManager.GetByIds(outputIngredientIds);
-
-        // TODO: Delete this ForEach later, it's just for testing
-        ingredients.ForEach(ingredient => Debug.Log(ingredient));
-
-        Destroy(ingredientDraggable.gameObject);
+        this.recipeManager.InstantiateIngredientsFromRecipe(ingredientDraggable.Data.id, this.toolData.id);
     }
 }

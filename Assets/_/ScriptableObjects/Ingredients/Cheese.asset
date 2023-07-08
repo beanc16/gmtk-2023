@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Cheese
   m_EditorClassIdentifier: 
   id: 5
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: f86140219a31cd0e19ebbb4fb0160182, type: 3}
