@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pepperoni
   m_EditorClassIdentifier: 
   id: 2
-  sprite: {fileID: 21300000, guid: 3a05ec711f8708097a1756d1e07eb32a, type: 3}
+  sprite: {fileID: 21300000, guid: 71b509daf89067266bd0a13a86da7b4f, type: 3}

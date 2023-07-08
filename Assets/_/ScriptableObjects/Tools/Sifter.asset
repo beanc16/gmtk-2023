@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Sifter
   m_EditorClassIdentifier: 
   id: 0
-  sprite: {fileID: 21300000, guid: 1adcd9cf26eb34f0986171ed9fd4da3b, type: 3}
+  sprite: {fileID: 21300000, guid: 85c1a5005f59c11ddac143c1931ef9f4, type: 3}

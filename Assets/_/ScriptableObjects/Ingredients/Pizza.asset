@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pizza
   m_EditorClassIdentifier: 
   id: 1
-  sprite: {fileID: 21300000, guid: 2a0f517c14f51c457b2f9126d2a676f1, type: 3}
+  sprite: {fileID: 21300000, guid: a0810dbde88483902a38c3a706db9a33, type: 3}

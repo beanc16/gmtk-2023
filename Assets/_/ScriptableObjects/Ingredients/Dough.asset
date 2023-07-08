@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Dough
   m_EditorClassIdentifier: 
   id: 4
-  sprite: {fileID: 21300000, guid: 8eab29a1843a3da15bbd7b331bcf4089, type: 3}
+  sprite: {fileID: 21300000, guid: e03b1d9144e4b5512953308d3f6dd493, type: 3}
