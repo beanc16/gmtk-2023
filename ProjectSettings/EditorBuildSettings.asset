@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_/Scenes/POC.unity
     guid: 21f0ee18f28f801fba7049ab5d96e253
+  - enabled: 1
+    path: Assets/_/Scenes/Prototype.unity
+    guid: 38e843e7a7a3bc9b6b3c107fa0235bcd
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 900c89081cbcaab748b90b1bbe1e2551, type: 2}

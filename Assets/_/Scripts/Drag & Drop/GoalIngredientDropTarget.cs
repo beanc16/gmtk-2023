@@ -12,7 +12,7 @@ public class GoalIngredientDropTarget : DropTarget
     private List<IngredientScriptableObject> orderedIngredients = new List<IngredientScriptableObject>();
     private List<IngredientScriptableObject> completedIngredients = new List<IngredientScriptableObject>();
 
-    private bool HasWon
+    public bool HasWon
     {
         get { return this.completedIngredients.Count == this.orderedIngredients.Count; }
     }
@@ -46,12 +46,6 @@ public class GoalIngredientDropTarget : DropTarget
             else
             {
                 completedIngredients.Add(ingredientDraggable.Data);
-            }
-
-            if (this.HasWon)
-            {
-                // TODO: Delete this later
-                Debug.Log("You win!");
             }
         }
     }

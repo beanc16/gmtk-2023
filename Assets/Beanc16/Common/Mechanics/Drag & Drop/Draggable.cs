@@ -94,6 +94,11 @@ namespace Beanc16.Common.Mechanics.DragAndDrop
             this.canvasGroup.blocksRaycasts = shouldAllow;
         }
 
+        public void ToggleInteractivity(bool shouldBeInteractive)
+        {
+            this.DetectThisObjectBeforeObjectsBeneath(shouldBeInteractive);
+        }
+
         private bool StartingDropTargetEqualsEndingDropTarget(DropTarget endingDropTarget)
         {
             return Equals(this.startDropTarget, endingDropTarget);
