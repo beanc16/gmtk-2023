@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using Beanc16.Common.Mechanics.DragAndDrop;
 
@@ -55,7 +56,11 @@ public class VictoryManager : MonoBehaviour
 
         // Make it so that any leftover draggables can't be dragged
         List<Draggable> draggables = FindObjectsOfType<Draggable>().ToList();
-        draggables.ForEach(draggable => draggable.ToggleInteractivity(false));
+        draggables.ForEach(draggable => {
+            draggable.ToggleInteractivity(false);
+            draggable.GetComponent<GraphicRaycaster>().enabled = false;
+            draggable.GetComponent<Canvas>().enabled = false;
+        });
 
         this.victoryTriggered = true;
 
