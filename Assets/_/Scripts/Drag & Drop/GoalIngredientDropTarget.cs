@@ -15,10 +15,19 @@ public class GoalIngredientDropTarget : DropTarget
     private List<GoalIngredientPanel> goalIngredientPanels = new List<GoalIngredientPanel>();
     [SerializeField]
     private GameObjectToggleHandler backgroundToggleHandler;
+    private bool hasWonDataInitialized = false;
 
     public bool HasWon
     {
-        get { return this.completedIngredients.Count == this.levelManager.OrderedIngredients.Count; }
+        get
+        {
+            if (!hasWonDataInitialized)
+            {
+                return false;
+            }
+
+            return this.completedIngredients.Count == this.levelManager.OrderedIngredients.Count;
+        }
     }
 
 
@@ -37,6 +46,7 @@ public class GoalIngredientDropTarget : DropTarget
         OnSuccessfulDrop.AddListener(ToggleCompletionMarkOnGoalIngredient);
         this.levelManager.OnOrderIngredientsInstantiatedSuccess.AddListener(() => {
             this.goalIngredientPanels = FindObjectsOfType<GoalIngredientPanel>().ToList();
+            hasWonDataInitialized = true;
         });
     }
 

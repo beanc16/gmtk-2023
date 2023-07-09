@@ -41,7 +41,7 @@ public class VictoryManager : MonoBehaviour
         this.TryTriggerVictory();
     }
 
-    private void TryTriggerVictory(Draggable draggable)
+    private void TryTriggerVictory()
     {
         if (!this.victoryTriggered && this.goalIngredientDropTarget.HasWon)
         {
