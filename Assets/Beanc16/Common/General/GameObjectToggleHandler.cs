@@ -14,12 +14,17 @@ namespace Beanc16.Common.General
 
         public void Show()
         {
-            gameObjectToToggle.SetActive(true);
+            this.gameObjectToToggle.SetActive(true);
         }
 
         public void Hide()
         {
-            gameObjectToToggle.SetActive(false);
+            this.gameObjectToToggle.SetActive(false);
+        }
+
+        public void ToggleVisibility(bool shouldBeVisible)
+        {
+            this.gameObjectToToggle.SetActive(shouldBeVisible);
         }
     }
 }

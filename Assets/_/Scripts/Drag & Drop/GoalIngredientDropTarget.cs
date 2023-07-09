@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using Beanc16.Common.General;
 using Beanc16.Common.Mechanics.DragAndDrop;
 
 public class GoalIngredientDropTarget : DropTarget
@@ -12,6 +13,8 @@ public class GoalIngredientDropTarget : DropTarget
     private List<IngredientScriptableObject> orderedIngredients = new List<IngredientScriptableObject>();
     private List<IngredientScriptableObject> completedIngredients = new List<IngredientScriptableObject>();
     private List<GoalIngredientPanel> goalIngredientPanels = new List<GoalIngredientPanel>();
+    [SerializeField]
+    private GameObjectToggleHandler backgroundToggleHandler;
 
     public bool HasWon
     {
@@ -23,6 +26,7 @@ public class GoalIngredientDropTarget : DropTarget
     private void Awake()
     {
         this.goalIngredientPanels = FindObjectsOfType<GoalIngredientPanel>().ToList();
+        this.backgroundToggleHandler = this.GetComponent<GameObjectToggleHandler>();
     }
 
     private void Start()
@@ -69,5 +73,10 @@ public class GoalIngredientDropTarget : DropTarget
             goalIngredientPanel.Data.id == ingredientDraggable.Data.id
         );
         goalIngredientPanel.ToggleCompletionMark(true);
+    }
+
+    public void ToggleBackgroundVisibility(bool shouldBeVisible)
+    {
+        this.backgroundToggleHandler.ToggleVisibility(shouldBeVisible);
     }
 }

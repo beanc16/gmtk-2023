@@ -7,6 +7,9 @@ using UnityEngine.EventSystems;
 namespace Beanc16.Common.UI
 {
     [System.Serializable]
+    public class AcceptHoverEnterIfNoErrorIsThrownEvent : UnityEvent<PointerEventData> { }
+
+    [System.Serializable]
     public class HoverEnterEvent : UnityEvent<PointerEventData> { }
 
     [System.Serializable]
@@ -16,6 +19,7 @@ namespace Beanc16.Common.UI
 
     public class OnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
+        public AcceptHoverEnterIfNoErrorIsThrownEvent AcceptHoverEnterIfNoErrorIsThrown;
         public HoverEnterEvent OnHoverEnter;
         public HoverExitEvent OnHoverExit;
 

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Mistake
   m_EditorClassIdentifier: 
   id: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 0168111a8e81e686caa8303f72002ddc, type: 3}

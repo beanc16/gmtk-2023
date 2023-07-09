@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Beanc16.Common.General;
 using Beanc16.Common.Mechanics.DragAndDrop;
 
 public class ToolDropTarget : DropTarget
@@ -11,11 +12,15 @@ public class ToolDropTarget : DropTarget
     private ToolScriptableObject toolData;
     private RecipeManager recipeManager;
     private IngredientsAddressablesManager ingredientsManager;
+    private ToolDropTargetBackgroundsManager toolDropTargetBackgroundsManager;
+    private GameObjectToggleHandler backgroundToggleHandler;
 
     private void Awake()
     {
         this.recipeManager = FindObjectOfType<RecipeManager>();
         this.ingredientsManager = FindObjectOfType<IngredientsAddressablesManager>();
+        this.toolDropTargetBackgroundsManager = FindObjectOfType<ToolDropTargetBackgroundsManager>();
+        this.backgroundToggleHandler = this.GetComponent<GameObjectToggleHandler>();
     }
 
     private void Start()
@@ -23,6 +28,7 @@ public class ToolDropTarget : DropTarget
         AcceptDropIfNoErrorIsThrown.AddListener(ValidateDraggableOnDrop);
         OnSuccessfulDrop.AddListener(OutputRecipe);
         OnSuccessfulDrop.AddListener(DeleteDroppedDraggable);
+        OnSuccessfulDrop.AddListener((Draggable draggable) => this.toolDropTargetBackgroundsManager.ToggleAllBackgroundVisibilities(false));
     }
 
     private void ValidateDraggableOnDrop(Draggable draggable)
@@ -39,5 +45,10 @@ public class ToolDropTarget : DropTarget
     {
         IngredientDraggable ingredientDraggable = (IngredientDraggable)draggable;
         this.recipeManager.InstantiateIngredientsFromRecipe(ingredientDraggable.Data.id, this.toolData.id);
+    }
+
+    public void ToggleBackgroundVisibility(bool shouldBeVisible)
+    {
+        this.backgroundToggleHandler.ToggleVisibility(shouldBeVisible);
     }
 }
