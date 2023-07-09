@@ -36,7 +36,8 @@ namespace Beanc16.Common.Dialogue
 
         private float TextSpeed
         {
-            get { return (this.textSpeed * 10) * Time.deltaTime; }
+            // get { return (this.textSpeed * 10) * Time.deltaTime; }
+            get { return this.textSpeed; }
         }
 
         private string CurrentDialogueLine

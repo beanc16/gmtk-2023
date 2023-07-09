@@ -5388,7 +5388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 7dc45add84a289ed79bd627016f53cff, type: 2}
-  textSpeed: 0.75
+  textSpeed: 0.02
   whenToStartDialogue: 1
   OnDialogueStart:
     m_PersistentCalls:
