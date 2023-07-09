@@ -13,6 +13,7 @@ public class ToolDropTarget : DropTarget
     private RecipeManager recipeManager;
     private IngredientsAddressablesManager ingredientsManager;
     private ToolDropTargetBackgroundsManager toolDropTargetBackgroundsManager;
+    [SerializeField]
     private GameObjectToggleHandler backgroundToggleHandler;
 
     private void Awake()
@@ -20,7 +21,6 @@ public class ToolDropTarget : DropTarget
         this.recipeManager = FindObjectOfType<RecipeManager>();
         this.ingredientsManager = FindObjectOfType<IngredientsAddressablesManager>();
         this.toolDropTargetBackgroundsManager = FindObjectOfType<ToolDropTargetBackgroundsManager>();
-        this.backgroundToggleHandler = this.GetComponent<GameObjectToggleHandler>();
     }
 
     private void Start()
