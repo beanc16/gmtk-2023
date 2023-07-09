@@ -35,7 +35,7 @@ public class GoalIngredientDropTarget : DropTarget
     private void Awake()
     {
         this.levelManager = FindObjectOfType<LevelManager>();
-        this.backgroundToggleHandler = this.GetComponent<GameObjectToggleHandler>();
+        this.backgroundToggleHandler = this.GetComponent<GameObjectToggleHandler>(); 
     }
 
     private void Start()

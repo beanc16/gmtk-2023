@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using TMPro;
+using Beanc16.Common.Dialogue;
 using Beanc16.Common.Mechanics.DragAndDrop;
 
 public class LevelManager : MonoBehaviour
@@ -15,6 +16,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     private GameObject orderPanel;
+    [SerializeField]
+    private DialoguePanel dialoguePanel;
     [SerializeField]
     private List<IngredientDropTarget> ingredientDropTargets = new List<IngredientDropTarget>();
 
@@ -64,6 +67,15 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         this.ingredientsManager = FindObjectOfType<IngredientsAddressablesManager>();
+
+        if (this.LevelData.shouldShowDialog)
+        {
+            this.dialoguePanel.gameObject.SetActive(true);
+        }
+        else
+        {
+            this.dialoguePanel.gameObject.SetActive(false);
+        }
     }
 
     private void Start()

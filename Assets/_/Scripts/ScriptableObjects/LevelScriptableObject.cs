@@ -8,6 +8,7 @@ public class LevelScriptableObject : ScriptableObject
     public int optimalNumberOfMoves = 0;
     public List<IngredientId> startingIngredientIds = new List<IngredientId>();
     public List<IngredientId> orderIngredientIds = new List<IngredientId>();
+    public bool shouldShowDialog = false;
 
 
 

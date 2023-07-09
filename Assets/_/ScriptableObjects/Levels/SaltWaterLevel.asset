@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50c4caf81c6b8f2f6ae7567678d2c6e4, type: 3}
-  m_Name: TutorialDialogue
+  m_Script: {fileID: 11500000, guid: b8058934432b6e05eb18cb824fbe2cad, type: 3}
+  m_Name: SaltWaterLevel
   m_EditorClassIdentifier: 
-  lines:
-  - Are you ready to dismantle food? Click me to dismiss.
-  - Drag food onto the tools to dismantle.
-  - Drag the requested order into the drop chute.
+  optimalNumberOfMoves: 5
+  startingIngredientIds: 01000000
+  orderIngredientIds: 090000000b000000
+  shouldShowDialog: 0

@@ -89,6 +89,30 @@ namespace Beanc16.Common.Scenes
             TryCallOnBeforeExitGameEvent();         // OnBeforeExitGame()
             Application.Quit();
         }
+
+
+
+        public static void NextLevel()
+        {
+            Scene curScene = SceneManager.GetActiveScene();
+            int levelNumber = curScene.name[curScene.name.Length - 1] - 0;
+            string sceneNameWithoutLevel = curScene.name.Remove(curScene.name.Length - 1, 1);
+            string sceneName = sceneNameWithoutLevel + (levelNumber + 1).ToString();
+
+            // The scene CAN be loaded
+            if (Application.CanStreamedLevelBeLoaded(sceneName))
+            {
+                TryCallOnBeforeSceneLoadedEvent();  // OnBeforeSceneLoaded()
+                SceneManager.LoadScene(sceneName);  // Load scene
+                TryCallOnAfterSceneLoadedEvent();   // OnAfterSceneLoaded()
+            }
+
+            // The scene CAN NOT be loaded
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+        }
         
         
         
