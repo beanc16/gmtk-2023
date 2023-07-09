@@ -57,6 +57,81 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - IngredientScriptableObject
+  - m_GUID: baae221d111f5043da3bc6c2ca3ccaef
+    m_Address: Flour
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: f2a4cd08ceb33a29480df85d7f931c4c
+    m_Address: Garlic
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: f4a0b35894776c63485276388fe10ec7
+    m_Address: Milk
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: 83cd8302b8fa5fb9aa2e6cbe1680dbb5
+    m_Address: Beef
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: 5c0ff9b175e5503f38408465e87147d4
+    m_Address: Pork
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: 71351b2087b5c1d9bbf7a7e4638877d1
+    m_Address: Tomato
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: e2d6f653a2e48bcca8bd5e0ba768a2cf
+    m_Address: Salt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: f2d1461783723265b95ab5082c348fa1
+    m_Address: Water
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: e68e7ca24c67204b18391dd4c90a9bcf
+    m_Address: Paprika
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - IngredientScriptableObject
+  - m_GUID: 33d7ff5ca21f651a9af1ef0c7130ee86
+    m_Address: Cheese_Sifter_Recipe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RecipeScriptableObject
+  - m_GUID: 796b6d6ecab7702b78603692c23b8ad7
+    m_Address: Dough_Sifter_Recipe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RecipeScriptableObject
+  - m_GUID: ec343dd62f751133086e54c942e35004
+    m_Address: Sauce_Sifter_Recipe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RecipeScriptableObject
+  - m_GUID: da6185b70adb2a9da8b0f20e7abe1ad8
+    m_Address: Sauce_Microwave_Recipe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RecipeScriptableObject
+  - m_GUID: 2825aa56916410d879ab921b748bce7f
+    m_Address: Pepperoni_Sifter_Recipe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RecipeScriptableObject
+  - m_GUID: 2422d224bd70718fdacd4e7e36d05a44
+    m_Address: Pepperoni_Microwave_Recipe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RecipeScriptableObject
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ddbcc8c75853a2c00a3d34cafde86434, type: 2}
   m_SchemaSet:
