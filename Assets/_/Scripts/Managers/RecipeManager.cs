@@ -11,13 +11,13 @@ public class RecipeManager : MonoBehaviour
 
     private RecipeAddressablesManager recipesManager;
     private IngredientsAddressablesManager ingredientsManager;
+    [SerializeField]
     private List<IngredientDropTarget> ingredientDropTargets = new List<IngredientDropTarget>();
 
     private void Awake()
     {
         this.recipesManager = FindObjectOfType<RecipeAddressablesManager>();
         this.ingredientsManager = FindObjectOfType<IngredientsAddressablesManager>();
-        this.ingredientDropTargets = FindObjectsOfType<IngredientDropTarget>().ToList();
     }
 
     public void InstantiateIngredientsFromRecipe(IngredientId inputIngredientId, ToolId toolId)

@@ -1,6 +1,8 @@
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class IngredientsAddressablesManager : AddressablesManager
 {
@@ -8,6 +10,9 @@ public class IngredientsAddressablesManager : AddressablesManager
 
     [SerializeField]
     private List<IngredientScriptableObject> ingredients;
+
+    [Header("Ingredient Events")]
+    public UnityEvent OnIngredientsLoadSuccess;
 
 
 
@@ -21,6 +26,8 @@ public class IngredientsAddressablesManager : AddressablesManager
         this.ingredients = scriptableObjects
             .Select(scriptableObject => (IngredientScriptableObject)scriptableObject)
             .ToList();
+
+        this.TryCallOnIngredientsLoadSuccessEvent();
     }
 
     public IngredientScriptableObject GetById(IngredientId ingredientId)
@@ -38,5 +45,13 @@ public class IngredientsAddressablesManager : AddressablesManager
                 ingredientIds.Contains(ingredient.id)
             )
             .ToList();
+    }
+
+    private void TryCallOnIngredientsLoadSuccessEvent()
+    {
+        if (this.OnIngredientsLoadSuccess != null)
+        {
+            this.OnIngredientsLoadSuccess.Invoke();
+        }
     }
 }

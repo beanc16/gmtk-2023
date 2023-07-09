@@ -10,7 +10,7 @@ public class GoalIngredientDropTarget : DropTarget
     [Header("Goal Data")]
 
     [SerializeField]
-    private List<IngredientScriptableObject> orderedIngredients = new List<IngredientScriptableObject>();
+    private LevelManager levelManager;
     private List<IngredientScriptableObject> completedIngredients = new List<IngredientScriptableObject>();
     private List<GoalIngredientPanel> goalIngredientPanels = new List<GoalIngredientPanel>();
     [SerializeField]
@@ -18,14 +18,14 @@ public class GoalIngredientDropTarget : DropTarget
 
     public bool HasWon
     {
-        get { return this.completedIngredients.Count == this.orderedIngredients.Count; }
+        get { return this.completedIngredients.Count == this.levelManager.OrderedIngredients.Count; }
     }
 
 
 
     private void Awake()
     {
-        this.goalIngredientPanels = FindObjectsOfType<GoalIngredientPanel>().ToList();
+        this.levelManager = FindObjectOfType<LevelManager>();
         this.backgroundToggleHandler = this.GetComponent<GameObjectToggleHandler>();
     }
 
@@ -35,6 +35,9 @@ public class GoalIngredientDropTarget : DropTarget
         OnSuccessfulDrop.AddListener(DeleteDroppedDraggable);
         OnSuccessfulDrop.AddListener(AddCompletedIngredient);
         OnSuccessfulDrop.AddListener(ToggleCompletionMarkOnGoalIngredient);
+        this.levelManager.OnOrderIngredientsInstantiatedSuccess.AddListener(() => {
+            this.goalIngredientPanels = FindObjectsOfType<GoalIngredientPanel>().ToList();
+        });
     }
 
     private void ValidateDraggableOnDrop(Draggable draggable)
@@ -48,7 +51,7 @@ public class GoalIngredientDropTarget : DropTarget
 
         else
         {
-            bool isOrderedIngredient = this.orderedIngredients.Any(orderedIngredient =>
+            bool isOrderedIngredient = this.levelManager.OrderedIngredients.Any(orderedIngredient =>
                 orderedIngredient.id == ingredientDraggable.Data.id
             );
 

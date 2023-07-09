@@ -17,7 +17,7 @@ public class RecipeScriptableObject : ScriptableObject
             + "{" + "\n\t"
             + "inputIngredientId: " + this.inputIngredientId.ToString() + "\n\t"
             + "toolId: " + this.toolId.ToString() + "\n\t"
-            + "outputIngredientIds: " + this.outputIngredientIds.ToString() + "\n"
+            + "outputIngredientIds: [" + string.Join(", ", this.outputIngredientIds) + "]\n"
             + "}";
     }
 }

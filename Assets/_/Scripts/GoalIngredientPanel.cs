@@ -11,13 +11,23 @@ public class GoalIngredientPanel : IngredientPanel
 
 
 
+    private void Start()
+    {
+        this.OnEnable();
+    }
+
     private void OnEnable()
     {
-        this.RefreshSprite(this.ingredientImageOverride);
+        this.RefreshSprite();
     }
 
     public void ToggleCompletionMark(bool isComplete)
     {
         this.completionMarkPanel.SetActive(isComplete);
+    }
+
+    public new void RefreshSprite()
+    {
+        this.RefreshSprite(this.ingredientImageOverride);
     }
 }

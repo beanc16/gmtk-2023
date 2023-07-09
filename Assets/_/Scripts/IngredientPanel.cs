@@ -11,7 +11,8 @@ public class IngredientPanel : MonoBehaviour
     public IngredientScriptableObject Data
     {
         get { return ingredientData; }
-        private set {
+        private set
+        {
             this.ingredientData = value;
             this.RefreshSprite();
         }
@@ -32,7 +33,7 @@ public class IngredientPanel : MonoBehaviour
 
     public void RefreshSprite()
     {
-        if (this.ingredientData != null)
+        if (this.ingredientData != null && this.ingredientImage != null)
         {
             this.ingredientImage.sprite = this.ingredientData.sprite;
         }
