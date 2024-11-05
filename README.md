@@ -23,7 +23,7 @@
 <div align="center">
   <!-- cover image -->
   <a href="https://github.com/beanc16/gmtk-2023">
-    <img src="./Assets/_/Images/Release/itch.io/itch-io-thumbnail.png" alt="Cover Image" width="50%">
+    <img src="./Assets/_/Images/Release/itch.io/itch-io-thumbnail.png" alt="Cover Image" width="66%">
   </a>
 </div>
 
